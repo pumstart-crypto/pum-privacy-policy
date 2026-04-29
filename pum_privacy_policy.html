@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P:um 개인정보 처리방침</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #FAFBFC;
+  --surface: #FFFFFF;
+  --text: #1A1D23;
+  --text-secondary: #5A6070;
+  --accent: #2563EB;
+  --accent-light: #EFF6FF;
+  --border: #E2E6ED;
+  --border-light: #F0F2F5;
+  --heading-bg: #F8F9FB;
+  --table-header: #F1F5F9;
+  --danger: #DC2626;
+  --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 56px 32px 48px;
+  background: linear-gradient(135deg, #1E3A5F 0%, #2563EB 100%);
+  border-radius: var(--radius);
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+}
+.header .effective {
+  display: inline-block;
+  margin-top: 16px;
+  background: rgba(255,255,255,0.12);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+/* ── Intro ── */
+.intro {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+/* ── TOC ── */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 36px;
+}
+.toc h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+}
+.toc a {
+  display: block;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.15s;
+  line-height: 1.6;
+}
+.toc a:hover { color: var(--accent); }
+.toc a .num {
+  display: inline-block;
+  width: 22px;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+/* ── Sections ── */
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 28px;
+  background: var(--heading-bg);
+  border-bottom: 1px solid var(--border-light);
+  cursor: default;
+}
+.section-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+.section-body {
+  padding: 24px 28px;
+}
+.section-body p {
+  margin-bottom: 14px;
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.85;
+}
+.section-body p:last-child { margin-bottom: 0; }
+
+.sub-title {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--text);
+  margin: 20px 0 8px;
+}
+.sub-title:first-child { margin-top: 0; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+thead th {
+  background: var(--table-header);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--border);
+  color: var(--text);
+  white-space: nowrap;
+}
+tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.7;
+}
+tbody tr:last-child td { border-bottom: none; }
+
+/* ── Highlight box ── */
+.highlight-box {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin: 14px 0;
+  font-size: 13.5px;
+  color: #1E40AF;
+  line-height: 1.7;
+}
+
+/* ── Numbered list in body ── */
+.body-list {
+  padding-left: 24px;
+  margin: 10px 0 14px;
+}
+.body-list li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  line-height: 1.7;
+}
+
+/* ── Contact card ── */
+.contact-card {
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.contact-card .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.contact-card .row {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.7;
+}
+.contact-card .row span {
+  display: inline-block;
+  width: 80px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* ── Remedy list ── */
+.remedy-list {
+  margin: 12px 0;
+}
+.remedy-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 14px;
+}
+.remedy-item:last-child { border-bottom: none; }
+.remedy-num {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.remedy-info .org { font-weight: 600; color: var(--text); }
+.remedy-info .detail { font-size: 13px; color: var(--text-secondary); }
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 32px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .container { padding: 16px 12px 60px; }
+  .header { padding: 40px 20px 36px; }
+  .header h1 { font-size: 22px; }
+  .toc-grid { grid-template-columns: 1fr; }
+  .section-body { padding: 20px 18px; }
+  .section-header { padding: 16px 18px; }
+  thead th, tbody td { padding: 10px 12px; font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>&lt; P:um &gt; 개인정보 처리방침</h1>
+  <div class="subtitle">부산대학교 재학생을 위한 통합 캠퍼스 서비스</div>
+  <div class="effective">시행일자: 2026년 04월 24일</div>
+</div>
+
+<!-- Intro -->
+<div class="intro">
+  P:um은(는) 정보주체의 자유와 권리 보호를 위해 「개인정보 보호법」 및 관계 법령이 정한 바를 준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고 있습니다. 이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>목차</h2>
+  <div class="toc-grid">
+    <a href="#s1"><span class="num">1.</span> 개인정보의 처리 목적</a>
+    <a href="#s2"><span class="num">2.</span> 개인정보의 처리 및 보유 기간</a>
+    <a href="#s3"><span class="num">3.</span> 처리하는 개인정보의 항목</a>
+    <a href="#s4"><span class="num">4.</span> 만 14세 미만 아동의 개인정보 처리</a>
+    <a href="#s5"><span class="num">5.</span> 개인정보의 제3자 제공</a>
+    <a href="#s6"><span class="num">6.</span> 개인정보 처리업무의 위탁</a>
+    <a href="#s7"><span class="num">7.</span> 개인정보의 국외 이전</a>
+    <a href="#s8"><span class="num">8.</span> 개인정보의 파기 절차 및 방법</a>
+    <a href="#s9"><span class="num">9.</span> 미이용자의 개인정보 파기 등에 관한 조치</a>
+    <a href="#s10"><span class="num">10.</span> 정보주체와 법정대리인의 권리·의무 및 행사방법</a>
+    <a href="#s11"><span class="num">11.</span> 개인정보의 안전성 확보조치</a>
+    <a href="#s12"><span class="num">12.</span> 개인정보 자동 수집 장치의 설치·운영 및 거부</a>
+    <a href="#s13"><span class="num">13.</span> 개인정보 보호책임자</a>
+    <a href="#s14"><span class="num">14.</span> 개인정보 열람청구</a>
+    <a href="#s15"><span class="num">15.</span> 권익침해 구제방법</a>
+    <a href="#s16"><span class="num">16.</span> 개인정보 처리방침의 변경</a>
+  </div>
+</div>
+
+<!-- 1. 처리 목적 -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">개인정보의 처리 목적</div>
+  </div>
+  <div class="section-body">
+    <p>P:um은(는) 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 「개인정보 보호법」 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+
+    <div class="sub-title">가. 회원 가입 및 관리</div>
+    <p>부산대학교 재학생 본인 확인 및 식별·인증, 회원자격 유지·관리, 서비스 부정이용 방지, 각종 고지·통지, 고충처리 목적으로 개인정보를 처리합니다.</p>
+
+    <div class="sub-title">나. 서비스 제공</div>
+    <p>학과 커뮤니티 자동 분류, 개인 강의 시간표 표시, 성적 관리 및 분석, 가계부 기능, 도서관 열람실 예약 스크래핑 등 맞춤형 서비스 제공을 목적으로 개인정보를 처리합니다.</p>
+  </div>
+</div>
+
+<!-- 2. 처리 및 보유 기간 -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">개인정보의 처리 및 보유 기간</div>
+  </div>
+  <div class="section-body">
+    <p>① P:um은(는) 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집 시에 동의 받은 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
+    <p>② 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>보유 및 이용기간</th></tr></thead>
+        <tbody>
+          <tr><td>사용자 계정 및 서비스 데이터<br>(시간표, 성적, 게시글, 할 일 등)</td><td>회원 탈퇴 시까지 보유 및 처리</td></tr>
+          <tr><td>로그인 세션 토큰(JWT)</td><td>발급일로부터 30일간 보유 후 만료</td></tr>
+          <tr><td>이메일 인증코드</td><td>발급 후 1시간 동안 서버 메모리(인메모리)에 임시 저장 후 자동 삭제</td></tr>
+          <tr><td>비밀번호 재설정 토큰</td><td>발급 후 5분간 서버 메모리에 임시 저장 후 자동 삭제</td></tr>
+          <tr><td>학생증 이미지</td><td>OCR 인증 처리 직후 즉시 파기 — 서버 DB에 일체 저장하지 않음</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 3. 처리하는 개인정보 항목 -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">처리하는 개인정보의 항목</div>
+  </div>
+  <div class="section-body">
+    <p>P:um은(는) 서비스 제공을 위해 필요한 최소한의 개인정보를 수집하고 있습니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">구분</th><th>항목</th></tr></thead>
+        <tbody>
+          <tr><td>필수 항목</td><td>아이디(username), 비밀번호(bcrypt 해시 저장), 이름, 학번, 학과(전공), 단과대학, 부산대 이메일, 학생증 이미지(인증용 1회성 — 서버 저장 없이 OCR 후 즉시 파기)</td></tr>
+          <tr><td>선택 항목</td><td>학년, 복수전공, 부전공, 프로필 아바타 색상</td></tr>
+          <tr><td>서비스 이용 중<br>자동 생성 항목</td><td>강의 시간표 데이터, 성적 데이터, 도서관 세션 토큰(JSESSIONID), 커뮤니티 게시글·댓글·이미지, 할 일 목록, IP 주소, 로그인 세션 토큰</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      학생증 이미지는 Google Cloud Vision API를 통한 OCR 텍스트 추출에만 사용되며, 추출 완료 즉시 서버 메모리에서 파기됩니다. P:um의 데이터베이스에는 학생증 이미지가 저장되지 않습니다.
+    </div>
+  </div>
+</div>
+
+<!-- 4. 만 14세 미만 아동 -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div class="section-title">만 14세 미만 아동의 개인정보 처리에 관한 사항</div>
+  </div>
+  <div class="section-body">
+    <p>P:um은(는) 부산대학교 재학생을 대상으로 하는 서비스로서, 만 14세 미만 아동의 개인정보를 수집하지 않으며, 만 14세 미만 아동의 회원 가입을 받지 않습니다.</p>
+  </div>
+</div>
+
+<!-- 5. 제3자 제공 — 수정: 도서관 JSESSIONID 제거, 위탁(6조)으로 이동 -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div class="section-title">개인정보의 제3자 제공에 관한 사항</div>
+  </div>
+  <div class="section-body">
+    <p>① P:um은(는) 정보주체의 개인정보를 제1조(개인정보의 처리 목적)에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 「개인정보 보호법」 제17조 및 제18조에 해당하는 경우에만 개인정보를 제3자에게 제공하고, 그 이외에는 정보주체의 개인정보를 제3자에게 제공하지 않습니다.</p>
+    
+    <p>② P:um은(는) 현재 정보주체의 개인정보를 제3자에게 제공하고 있지 않습니다.</p>
+
+    <div class="highlight-box">
+      부산대학교 도서관 열람실 좌석 예약 현황 스크래핑 기능은 P:um이 이용자를 대리하여 처리하는 업무로, 「개인정보 보호법」상 <strong>처리 위탁</strong>에 해당합니다. 이에 관한 세부사항은 제6조(개인정보 처리업무의 위탁)에서 안내하고 있습니다.
+    </div>
+
+    <p>③ P:um은(는) 재난, 감염병, 급박한 생명·신체 위험을 초래하는 사건·사고, 급박한 재산 손실 등의 긴급상황이 발생하는 경우 정보주체의 동의 없이 관계기관에 개인정보를 제공할 수 있습니다. 이 경우 P:um은(는) 근거법령에 의거하여 필요한 최소한의 개인정보만을 제공하며, 목적과 다르게 제공하지 않겠습니다.</p>
+  </div>
+</div>
+
+<!-- 6. 위탁 — 수정: SMTP 수탁자 명시(Google LLC Gmail SMTP) + 도서관 스크래핑 위탁 추가 -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div class="section-title">개인정보 처리업무의 위탁에 관한 사항</div>
+  </div>
+  <div class="section-body">
+    <p>① P:um은(는) 원활한 개인정보 업무처리를 위하여 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>위탁받는 자(수탁자)</th><th>위탁업무</th><th>보유 및 이용기간</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Google LLC<br>(Gmail SMTP)</td>
+            <td>이메일 인증 및 비밀번호 재설정 메일 발송<br>(위탁 항목: 이메일 주소, 인증코드)</td>
+            <td>메일 발송 완료 시까지</td>
+          </tr>
+          <tr>
+            <td>Google LLC<br>(Google Cloud Vision API)</td>
+            <td>학생증 이미지 OCR 텍스트 추출<br>(위탁 항목: 학생증 이미지)</td>
+            <td>API 호출 처리 완료 즉시 파기<br>(Google 측 이미지 미보관)</td>
+          </tr>
+          <tr>
+            <td>부산대학교 도서관 시스템</td>
+            <td>열람실 좌석 예약 현황 스크래핑 및 연동<br>(위탁 항목: 도서관 세션 토큰(JSESSIONID))</td>
+            <td>해당 세션 종료 시까지</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      <strong>도서관 연동 위탁 관련 안내:</strong> 도서관 열람실 좌석 예약·현황 조회 기능은 P:um이 이용자를 대리하여 부산대학교 도서관 시스템에 접근·처리하는 업무입니다. 이용자는 도서관 연동 기능 사용 시 세션 토큰의 위탁 처리에 동의하게 되며, 동의하지 않을 경우 해당 기능의 이용이 제한될 수 있습니다.
+    </div>
+
+    <p>② P:um은(는) 위탁계약 체결 시 「개인정보 보호법」 제26조에 따라 위탁업무 수행목적 외 개인정보 처리금지, 기술적·관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리·감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.</p>
+    <p>③ 위탁업무의 내용이나 수탁자가 변경될 경우에는 지체 없이 본 개인정보 처리방침을 통하여 공개하도록 하겠습니다.</p>
+  </div>
+</div>
+
+<!-- 7. 국외 이전 -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div class="section-title">개인정보의 국외 이전에 관한 사항</div>
+  </div>
+  <div class="section-body">
+    <p>P:um은(는) 학생증 인증(OCR)을 위해 다음과 같이 개인정보 처리업무를 국외 법인에 위탁하고 있습니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:180px">항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>수탁업체</td><td>Google LLC</td></tr>
+          <tr><td>수탁업체의 위치</td><td>미국</td></tr>
+          <tr><td>이전 일시 및 방법</td><td>학생증 인증 요청 시 네트워크를 통한 API 호출 전송</td></tr>
+          <tr><td>정보관리책임자의 연락처</td><td>https://cloud.google.com/contact</td></tr>
+          <tr><td>이전하는 개인정보 항목</td><td>학생증 이미지 (1회성)</td></tr>
+          <tr><td>위탁 업무 내용</td><td>학생증 이미지에서 OCR을 통한 텍스트 추출</td></tr>
+          <tr><td>개인정보의 보유 및 이용기간</td><td>API 호출 처리 완료 즉시 파기 (이미지를 별도 저장하지 않음)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box">
+      학생증 이미지는 P:um의 서버에도, Google의 서버에도 영구 저장되지 않습니다. OCR 텍스트 추출이 완료되는 즉시 양측 모두에서 이미지가 파기되며, 추출된 텍스트 정보(이름, 학번 등)만이 본인 인증 결과로 활용됩니다.
+    </div>
+  </div>
+</div>
+
+<!-- 8. 파기 절차 및 방법 -->
+<div class="section" id="s8">
+  <div class="section-header">
+    <div class="section-num">8</div>
+    <div class="section-title">개인정보의 파기 절차 및 방법</div>
+  </div>
+  <div class="section-body">
+    <p>① P:um은(는) 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다.</p>
+
+    <p>② 정보주체로부터 동의받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는, 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</p>
+
+    <p>③ 개인정보 파기의 절차 및 방법은 다음과 같습니다.</p>
+
+    <div class="sub-title">1. 파기절차</div>
+    <p>P:um은(는) 파기 사유가 발생한 개인정보를 선정하고, 개인정보 보호 담당자의 확인을 거쳐 개인정보를 파기합니다.</p>
+
+    <div class="sub-title">2. 파기방법</div>
+    <p>전자적 파일 형태로 기록·저장된 개인정보는 기록을 재생할 수 없도록 파기합니다. 기기 로컬의 캐시 데이터(AsyncStorage)는 전체 초기화 조치합니다.</p>
+
+    <div class="highlight-box">
+      <strong>회원 탈퇴 시 자동 삭제:</strong> 정보주체가 회원 탈퇴(DELETE /auth/withdraw)를 요청할 경우, 데이터베이스의 <code>onDelete: CASCADE</code> 설정을 통해 사용자 계정 레코드와 연결된 모든 데이터(세션 토큰, 성적 데이터, 강의 시간표, 커뮤니티 게시글·댓글, 할 일 목록 등)가 즉시 자동으로 일괄 삭제됩니다. 별도의 보류 기간 없이 탈퇴 요청 시점에 모든 개인정보가 완전히 파기되며, 복구할 수 없습니다.
+    </div>
+  </div>
+</div>
+
+<!-- 9. 미이용자 파기 -->
+<div class="section" id="s9">
+  <div class="section-header">
+    <div class="section-num">9</div>
+    <div class="section-title">미이용자의 개인정보 파기 등에 관한 조치</div>
+  </div>
+  <div class="section-body">
+    <p>① P:um은(는) 1년간 서비스를 이용하지 않은 이용자의 개인정보를 파기하거나 다른 이용자의 개인정보와 분리하여 별도로 저장·관리합니다. 다만, 다른 법령에서 정한 보존기간이 경과할 때까지 다른 이용자의 개인정보와 분리하여 별도로 저장·관리할 수 있습니다.</p>
+    <p>② P:um은(는) 개인정보의 파기 30일 전까지 개인정보가 파기되는 사실, 기간 만료일 및 파기되는 개인정보의 항목을 부산대 이메일 등 이용자에게 통지 가능한 방법으로 알립니다.</p>
+    <p>③ 개인정보의 파기를 원하지 않으시는 경우, 기간 만료 전 서비스 로그인을 하시면 됩니다.</p>
+  </div>
+</div>
+
+<!-- 10. 정보주체 권리 -->
+<div class="section" id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <div class="section-title">정보주체와 법정대리인의 권리·의무 및 행사방법</div>
+  </div>
+  <div class="section-body">
+    <p>① 정보주체는 P:um에 대해 언제든지 개인정보 열람·정정·삭제·처리정지 요구 등의 권리를 행사할 수 있습니다.</p>
+
+    <p>② 권리 행사는 P:um에 대해 「개인정보 보호법」 시행령 제41조 제1항에 따라 서면, 전자우편 등을 통하여 하실 수 있으며, P:um은(는) 이에 대해 지체 없이 조치하겠습니다.</p>
+
+    <p>③ 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수도 있습니다. 이 경우 「개인정보 처리 방법에 관한 고시(제2020-7호)」 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.</p>
+
+    <p>④ 개인정보 열람 및 처리정지 요구는 「개인정보 보호법」 제35조 제4항, 제37조 제2항에 의하여 정보주체의 권리가 제한될 수 있습니다.</p>
+
+    <p>⑤ 개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</p>
+
+    <p>⑥ P:um은(는) 정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</p>
+  </div>
+</div>
+
+<!-- 11. 안전성 확보조치 -->
+<div class="section" id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <div class="section-title">개인정보의 안전성 확보조치</div>
+  </div>
+  <div class="section-body">
+    <p>P:um은(는) 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.</p>
+
+    <div class="sub-title">1. 관리적 조치</div>
+    <p>내부관리계획 수립·시행, 개인정보 취급 인원 최소화</p>
+
+    <div class="sub-title">2. 기술적 조치</div>
+    <ul class="body-list">
+      <li>비밀번호 bcrypt 단방향 해시 암호화 저장 (원문 복원 불가)</li>
+      <li>JWT(JSON Web Token) 기반 인증 시스템 운영</li>
+      <li>서버 요청 속도 제한(Rate Limit) 적용을 통한 무차별 대입 공격 방지</li>
+      <li>모바일 OS 레벨 암호화 저장소(SecureStore) 활용</li>
+      <li>회원 탈퇴 시 <code>onDelete: CASCADE</code> 설정을 통한 연관 데이터 완전 자동 삭제</li>
+      <li>학생증 이미지의 DB 비저장 원칙 — OCR 처리 후 즉시 메모리에서 파기</li>
+    </ul>
+
+    <div class="sub-title">3. 물리적 조치</div>
+    <p>서버 호스팅 환경(클라우드)의 물리적 접근 통제</p>
+  </div>
+</div>
+
+<!-- 12. 자동 수집 장치 -->
+<div class="section" id="s12">
+  <div class="section-header">
+    <div class="section-num">12</div>
+    <div class="section-title">개인정보를 자동으로 수집하는 장치의 설치·운영 및 그 거부에 관한 사항</div>
+  </div>
+  <div class="section-body">
+    <p>① P:um은(는) 이용자에게 개별적인 맞춤서비스를 제공하기 위해 이용정보를 저장하고 수시로 불러오는 '세션/JWT 토큰'을 사용합니다. 토큰은 모바일 기기의 암호화 저장소(SecureStore)에 안전하게 보관되며, 로그아웃 또는 만료 시 자동으로 삭제됩니다.</p>
+    <p>② P:um은(는) 웹 쿠키(cookie) 기반의 세션 관리를 사용하지 않습니다.</p>
+    <p>③ P:um은(는) 광고 식별자(ADID/IDFA)를 수집하지 않으며, 제3자 분석 도구(Google Analytics 등)를 사용하지 않습니다.</p>
+  </div>
+</div>
+
+<!-- 13. 보호책임자 -->
+<div class="section" id="s13">
+  <div class="section-header">
+    <div class="section-num">13</div>
+    <div class="section-title">개인정보 보호책임자에 관한 사항</div>
+  </div>
+  <div class="section-body">
+    <p>① P:um은(는) 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+
+    <div class="contact-card">
+      <div class="label">개인정보 보호책임자</div>
+      <div class="row"><span>담당</span> 개인정보 보호 담당자</div>
+      <div class="row"><span>소속</span> P:um 운영팀</div>
+      <div class="row"><span>연락처</span> contact@pum.company</div>
+    </div>
+
+    <p>② 정보주체는 P:um의 서비스를 이용하시면서 발생한 모든 개인정보보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의할 수 있습니다. P:um은(는) 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.</p>
+  </div>
+</div>
+
+<!-- 14. 열람청구 -->
+<div class="section" id="s14">
+  <div class="section-header">
+    <div class="section-num">14</div>
+    <div class="section-title">개인정보의 열람청구를 접수·처리하는 부서</div>
+  </div>
+  <div class="section-body">
+    <p>정보주체는 「개인정보 보호법」 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. P:um은(는) 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.</p>
+
+    <div class="contact-card">
+      <div class="label">개인정보 열람청구 접수·처리 부서</div>
+      <div class="row"><span>부서명</span> P:um 운영팀</div>
+      <div class="row"><span>담당</span> 개인정보 보호 담당자</div>
+      <div class="row"><span>연락처</span> contact@pum.company</div>
+    </div>
+  </div>
+</div>
+
+<!-- 15. 권익침해 구제방법 -->
+<div class="section" id="s15">
+  <div class="section-header">
+    <div class="section-num">15</div>
+    <div class="section-title">정보주체의 권익침해에 대한 구제방법</div>
+  </div>
+  <div class="section-body">
+    <p>정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.</p>
+
+    <div class="remedy-list">
+      <div class="remedy-item">
+        <div class="remedy-num">1</div>
+        <div class="remedy-info">
+          <div class="org">개인정보분쟁조정위원회</div>
+          <div class="detail">(국번없이) 1833-6972 · www.kopico.go.kr</div>
+        </div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-num">2</div>
+        <div class="remedy-info">
+          <div class="org">개인정보침해신고센터</div>
+          <div class="detail">(국번없이) 118 · privacy.kisa.or.kr</div>
+        </div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-num">3</div>
+        <div class="remedy-info">
+          <div class="org">대검찰청</div>
+          <div class="detail">(국번없이) 1301 · www.spo.go.kr</div>
+        </div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-num">4</div>
+        <div class="remedy-info">
+          <div class="org">경찰청 사이버수사국</div>
+          <div class="detail">(국번없이) 182 · ecrm.cyber.go.kr</div>
+        </div>
+      </div>
+    </div>
+
+    <p>P:um은(는) 정보주체의 개인정보자기결정권을 보장하고, 개인정보침해로 인한 상담 및 피해 구제를 위해 노력하고 있으며, 신고나 상담이 필요한 경우 아래의 담당부서로 연락해 주시기 바랍니다.</p>
+
+    <div class="contact-card">
+      <div class="label">개인정보 관련 고충처리 담당부서</div>
+      <div class="row"><span>부서명</span> P:um 운영팀</div>
+      <div class="row"><span>담당</span> 개인정보 보호 담당자</div>
+      <div class="row"><span>연락처</span> contact@pum.company</div>
+    </div>
+  </div>
+</div>
+
+<!-- 16. 처리방침 변경 -->
+<div class="section" id="s16">
+  <div class="section-header">
+    <div class="section-num">16</div>
+    <div class="section-title">개인정보 처리방침의 변경에 관한 사항</div>
+  </div>
+  <div class="section-body">
+    <p>이 개인정보 처리방침은 2026년 04월 24일부터 적용됩니다.</p>
+    <p>이전의 개인정보 처리방침은 아래에서 확인하실 수 있습니다.</p>
+    <p style="color: var(--text-secondary); font-size: 13.5px;">- 이전 버전 없음 (최초 시행)</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  &copy; 2026 P:um. All rights reserved.
+</div>
+
+</div>
+</body>
+</html>
